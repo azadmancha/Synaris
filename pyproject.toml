@@ -1,0 +1,5 @@
+[project]
+name = "synaris"
+version = "0.1.0"
+description = "Synaris monorepo"
+requires-python = ">=3.11"
