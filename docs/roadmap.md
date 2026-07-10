@@ -1,182 +1,153 @@
 # Synaris Roadmap
 
-> **Vision:** Build an AI-native personalized learning platform that makes modern standard education accessible to everyone through adaptive learning, trustworthy AI, and modern software engineering.
+## Version 2 — Core Platform Foundation (Current Goal)
 
----
+### Platform
 
-# Version 2 — Foundation
-
-**Goal:** Build a secure, production-ready AI learning platform.
-
-## Platform
-- Next.js Frontend
-- FastAPI Backend
-- PostgreSQL Database
+- FastAPI backend
+- Next.js frontend
+- PostgreSQL
 - Docker
-- GitHub Actions (CI/CD)
-- Professional Landing Page
-- Student Dashboard
-- Responsive UI
+- Professional landing page
+- Google OAuth authentication
+- User profiles
+- Learning dashboard
 
-## Authentication
-- Google OAuth
-- JWT Authentication
-- User Profiles
-- Session Management
+### AI Foundation
 
-## AI Infrastructure
 - AI Orchestrator
-- Gemini Integration
-- Groq Integration
-- OpenRouter Integration
-- Ollama Support
-- Prompt Management
+- Gemini integration
+- Groq integration
+- OpenRouter (free models)
+- Ollama support (optional/local)
+- Prompt management
+- Internal AI evaluation
 
-## Adaptive Learning Engine
-- Personalized Explanations
-- Multiple Learning Modes
-- Quiz Generation
-- Study Planner
-- Progress Tracking
-- Learning History
+### RAG Foundation
 
-## RAG Pipeline
-- Wikipedia Retrieval
-- OpenStax Retrieval
-- Wikibooks Retrieval
+- Wikipedia integration
+- OpenStax integration
+- Wikibooks integration
+- Document ingestion
 - Embeddings
-- Vector Database
-- Retrieval Pipeline
-- Source Citations
+- Vector database
+- Retrieval
+- Citations ("Learn More")
 
-## Explainability
-- Confidence Scoring
-- Source Attribution
-- Citation Generation
-- Alternative Explanations
-- Learning Feedback
+### Learning Features
 
-## AI Security
-- Prompt Injection Protection
-- Prompt Leakage Prevention
-- Jailbreak Detection
-- Input Validation
-- Output Filtering
-- Rate Limiting
-- Logging & Monitoring
+- AI Tutor
+- Adaptive explanations
+- Quiz generation
+- Personalized study plans
+- Progress tracking
+- Learning history
+- Feedback loop (👍 / 🤔 / 😕)
 
-## Deployment
-- Docker Deployment
-- Production Environment
-- Monitoring
-- Automated Testing
-- API Documentation
+### Security (Core)
+
+- Google OAuth
+- JWT authentication
+- Role-based authorization
+- Prompt injection protection
+- Prompt leak prevention
+- System prompt isolation
+- Input validation & sanitization
+- Output safety filtering
+- Rate limiting
+- API key protection (.env)
+- Secure logging & audit trails
+- Basic abuse detection
+
+### Infrastructure
+
+- Docker
+- CI/CD (GitHub Actions)
+- Environment configuration
+- Logging
+- Error handling
+- Monitoring hooks
 
 ---
 
-# Version 3 — Intelligent Learning
+## Version 3 — Intelligent Learning System
 
-**Goal:** Transform Synaris into an adaptive AI learning system.
+### AI Agents
 
-## AI Agents
 - Tutor Agent
 - Planner Agent
-- Research Agent
 - Quiz Agent
-- Evaluation Agent
+- Evaluator Agent
+- Research Agent
 - Mentor Agent
 - Agent Coordinator
 
-## Personalization
-- Learning Memory
-- Student Learning Profiles
-- Weakness Detection
-- Mastery Tracking
-- Adaptive Learning Paths
+### Advanced Learning
 
-## Advanced Learning
-- Recommendation Engine
-- Smart Revision Planner
-- Misconception Detection
-- Concept Reinforcement
-- Goal-Based Learning
+- Long-term memory
+- Personalization engine
+- Learning analytics
+- Mastery estimation
+- Revision planner
+- Recommendation engine
+- Search engine
 
-## Advanced Retrieval
-- Hybrid Search
-- Multi-Source RAG
+### Advanced RAG
+
+- Multi-source retrieval
 - Reranking
-- Knowledge Graph Foundation
+- Better citations
+- Hybrid search
+- Knowledge graph foundation
 
-## AI Quality
-- Hallucination Detection
-- AI Evaluation Framework
-- Educational Quality Scoring
-- Automatic Model Selection
-- Response Benchmarking
+### AI Evaluation
 
-## Analytics
-- Learning Analytics
-- Topic Mastery Dashboard
-- Performance Insights
-- Learning Reports
-- Personalized Recommendations
+- Hallucination detection
+- Educational quality scoring
+- Response benchmarking
+- Model comparison
+- Internal testing suite
 
 ---
 
-# Version 4 — Educational Intelligence
+## Version 4 — Research & Advanced AI
 
-**Goal:** Expand Synaris into a research-driven educational ecosystem.
+### Multimodal AI
 
-## Multimodal AI
-- Image Understanding
-- OCR
-- Diagram Interpretation
-- Equation Recognition
-- PDF Learning
+- Image understanding
+- Diagram interpretation
+- OCR support
+- Mathematical notation understanding
 
-## Advanced Intelligence
-- Multi-Agent Collaboration
-- Advanced Reasoning
-- Explainable Recommendations
-- Concept Dependency Graphs
-- Knowledge Gap Analysis
+### Advanced Intelligence
 
-## Educational Research
-- Learning Effectiveness Evaluation
-- Educational Benchmarks
-- Open Educational Datasets
-- AI Performance Research
+- Explainable AI
+- Learning graph
+- Advanced reasoning
+- Multi-agent collaboration
+- Research mode
 
-## Platform Expansion
-- Teacher Dashboard
-- Classroom Support
-- LMS Integrations
-- Community Learning
-- Collaborative Study Spaces
+### Research
+
+- Educational benchmarks
+- AI evaluation framework
+- Research datasets
+- Paper-ready experiments
+- Open-source release
 
 ---
 
-# Future Vision
+## Long-Term Vision
 
-These ideas are exploratory and will be considered after Version 4.
-
-- Local AI Models
-- Educational API
-- Plugin Ecosystem
-- Open-Source Community
-- Global Educational Partnerships
+- Educational institutions
+- Teacher dashboard
+- Classroom management
+- LMS integrations
+- Offline-first support
+- Cross-platform expansion (only if there is real demand)
 
 ---
 
-# Engineering Principles
+## Security by Design
 
-Every feature added to Synaris will :
-
-- Improve learning outcomes.
-- Keep high-quality education freely accessible.
-- Stay simple and intuitive for students.
-- Be modular and scalable.
-- Protect user privacy and data.
-- Defend against AI misuse and prompt attacks.
-- Be transparent and trustworthy.
-- Encourage independent thinking rather than replacing it.
+Security is a core architectural principle for Synaris. Every AI interaction must be validated, isolated, and protected against prompt injection, prompt leakage, unauthorized access, and abuse before reaching the model.
