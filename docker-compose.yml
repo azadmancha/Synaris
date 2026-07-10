@@ -1,2 +1,59 @@
 version: "3.9"
-services: {}
+services:
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: synaris
+      POSTGRES_PASSWORD: synaris
+      POSTGRES_DB: synaris
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - synaris
+
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://synaris:synaris@db:5432/synaris
+      AUTH_SECRET: ${AUTH_SECRET}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      COOKIE_DOMAIN: localhost
+      NEXTAUTH_URL: http://localhost:3000
+      APP_URL: http://localhost:3000
+      ACCESS_TOKEN_EXPIRE_MINUTES: 1440
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - synaris
+
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      NEXTAUTH_URL: http://localhost:3000
+      AUTH_SECRET: ${AUTH_SECRET}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    networks:
+      - synaris
+
+volumes:
+  db_data:
+
+networks:
+  synaris:
+    driver: bridge

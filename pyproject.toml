@@ -3,3 +3,17 @@ name = "synaris"
 version = "0.1.0"
 description = "Synaris monorepo"
 requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.23.0",
+    "sqlalchemy>=2.0.0",
+    "asyncpg>=0.28.0",
+    "authlib>=1.2.0",
+    "python-jose[cryptography]>=3.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.8.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

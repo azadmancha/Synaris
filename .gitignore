@@ -157,6 +157,18 @@ ENV/
 env.bak/
 venv.bak/
 
+# Node.js
+apps/web/node_modules/
+apps/web/.next/
+apps/web/out/
+apps/web/.turbo/
+apps/web/.parcel-cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Spyder project settings
 .spyderproject
 .spyproject
