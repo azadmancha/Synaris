@@ -81,7 +81,7 @@ The Presentation Layer is responsible for the complete user experience.
 Responsibilities include:
 
 * User Interface
-* Authentication
+* Authentication (frontend-managed with Auth.js and secure session tokens)
 * Dashboard
 * AI Chat
 * Quiz Interface

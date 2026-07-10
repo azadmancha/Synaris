@@ -41,7 +41,8 @@ Synaris brings together strong educational design, secure AI orchestration, and 
 
 1. Copy `.env.example` to `.env`
 2. Fill in `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `AUTH_SECRET`, and `DATABASE_URL`
-3. Start the development stack:
+3. Register the Google OAuth callback URI as `http://localhost:3000/api/auth/callback/google`
+4. Start the development stack:
    ```bash
    docker compose up --build
    ```

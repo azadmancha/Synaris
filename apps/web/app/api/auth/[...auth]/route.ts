@@ -11,9 +11,12 @@ const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
     }),
   ],
-  secret: process.env.AUTH_SECRET ?? "",
+  secret: process.env.NEXTAUTH_SECRET ?? process.env.AUTH_SECRET ?? "",
   session: {
     strategy: "jwt" as const,
+    maxAge: 60 * 60 * 24,
+  },
+  jwt: {
     maxAge: 60 * 60 * 24,
   },
   callbacks: {

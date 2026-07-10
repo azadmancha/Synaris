@@ -16,7 +16,11 @@ def create_access_token(subject: str, expires_delta: timedelta | None = None) ->
 
 def decode_access_token(token: str) -> dict:
     try:
-        payload = jwt.decode(token, settings.auth_secret, algorithms=[settings.jwt_algorithm])
+        payload = jwt.decode(
+            token,
+            settings.auth_secret,
+            algorithms=[settings.jwt_algorithm, "HS512", "HS256"],
+        )
         return payload
     except JWTError as exc:
         raise ValueError("Invalid or expired token") from exc
